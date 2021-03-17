@@ -1,0 +1,18 @@
+<table
+  *ngIf="data?.length > 0; else noData"
+  class="table table-hover table-bandeja text-center"
+>
+  <thead class="thead-light">
+    <th class="no-bg"></th>
+    <th *ngFor="let column of columns">{{ column }}</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let object of data; let index = index">
+      <th></th>
+      <td *ngFor="let key of object | keys">{{ getItemByKeyName(index, key)}}</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noData>
+  <p class="text-center">No hay registros disponibles para mostrar</p>
+</ng-template>
