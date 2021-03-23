@@ -10,7 +10,20 @@ import { PersonService } from './common/person.service';
 export class AppComponent implements OnInit{
 
   public personList : Array<Person>
-  public columns :string[]=["name","surname","age", "job"]
+  public columns = [
+    {
+      name: 'job',
+      description: 'job desc'
+    },
+    {
+      name: 'name',
+      description: 'name desc'
+    },
+    {
+      name: 'surname',
+      description: 'surname description'
+    },
+  ]
 
   constructor(private personService: PersonService){}
 

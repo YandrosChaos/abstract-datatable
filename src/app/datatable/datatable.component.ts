@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DatatableComponent implements OnInit {
   @Input() data: any[];
-  @Input() columns: string[];
+  @Input() columns: { name: string; description: string }[];
   //@Input() buttonType: string
   //@Input() type: string
   //@Input() search?: boolean = false
@@ -17,8 +17,14 @@ export class DatatableComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public getItemByKeyName(columnIndex: number, key: string): string {
-    let currentObject = this.data[columnIndex];
-    return currentObject[key] || '-';
+  public getItemByKeyName(objectIndex: number, keyIndex: number): string {
+    let currentObject = this.data[objectIndex];
+    let key = this.columns[keyIndex]?.name;
+
+    if(this.columns.find(x=> x.name===key)){
+      return currentObject[key] || '-';
+    } else {
+      return;
+    }
   }
 }

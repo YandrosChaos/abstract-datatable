@@ -4,12 +4,14 @@
 >
   <thead class="thead-light">
     <th class="no-bg"></th>
-    <th *ngFor="let column of columns">{{ column }}</th>
+    <th *ngFor="let column of columns">{{ column.description }}</th>
   </thead>
   <tbody>
-    <tr *ngFor="let object of data; let index = index">
+    <tr *ngFor="let object of data; let objectIndex = index">
       <th></th>
-      <td *ngFor="let key of object | keys">{{ getItemByKeyName(index, key)}}</td>
+      <td *ngFor="let key of object | keys; let keyIndex = index">
+        {{ getItemByKeyName(objectIndex,keyIndex) }}
+      </td>
     </tr>
   </tbody>
 </table>
