@@ -1,4 +1,3 @@
-import { Observable } from "rxjs";
 import { Person } from "./person.interface";
 
 export const personList: Array<Person> = [
@@ -9,10 +8,10 @@ export const personList: Array<Person> = [
     job: 'Developer',
   },
   {
-    name: 'Victor',
-    surname: 'Maximo',
+    name: 'Maximo',
+    surname: '',
     age: 25,
-    job: 'Hacker',
+    job: 'Gladiator',
   },
   {
     name: 'Marco',
@@ -34,7 +33,6 @@ export const personList: Array<Person> = [
   },
   {
     name: 'Heracles',
-    surname: undefined,
     age: 26,
     job: 'Hero',
   },
