@@ -32,4 +32,13 @@ export class AppComponent implements OnInit {
       this.personList = response;
     });
   }
+
+  onAdd(){
+    console.log('Item added')
+  }
+
+  onRowClicked(event: Person){
+    console.log(event)
+  }
+
 }

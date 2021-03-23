@@ -1,7 +1,6 @@
 <h4 class="my-4 ml-3 float-left" *ngIf="button">
-  <a
-    class="clickable text-success"
-    ><i class="fas fa-plus-circle fa-lg fa-fw"></i>{{button}}</a
+  <a (click)="onButtonClickedEvent()" class="clickable text-success"
+    ><i class="fas fa-plus-circle fa-lg fa-fw"></i>{{ button }}</a
   >
 </h4>
 
@@ -14,10 +13,13 @@
     <th *ngFor="let column of columns">{{ column.description }}</th>
   </thead>
   <tbody>
-    <tr *ngFor="let object of data; let objectIndex = index">
+    <tr
+      *ngFor="let object of data; let objectIndex = index"
+      (click)="onRowClickedEvent(object)"
+    >
       <th></th>
       <td *ngFor="let key of object | keys; let keyIndex = index">
-        {{ getItemByKeyName(objectIndex,keyIndex) }}
+        {{ getItemByKeyName(objectIndex, keyIndex) }}
       </td>
     </tr>
   </tbody>
