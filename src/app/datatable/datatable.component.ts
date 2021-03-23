@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+interface Column{
+  name:string;
+  description: string;
+}
+
 @Component({
   selector: 'app-datatable',
   templateUrl: './datatable.component.html',
@@ -7,9 +12,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DatatableComponent implements OnInit {
   @Input() data: any[];
-  @Input() columns: { name: string; description: string }[];
-  //@Input() buttonType: string
-  //@Input() type: string
+  @Input() columns:Column[];
+  @Input() button?: string
   //@Input() search?: boolean = false
   //@Input() paginationMax?: number = 12
 
