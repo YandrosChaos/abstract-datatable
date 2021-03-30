@@ -1,0 +1,30 @@
+<button *ngIf="button" class="btn btn-info" (click)="onButtonClickedEvent()">
+  {{ button }}
+</button>
+
+<table
+  *ngIf="data?.length > 0; else noData"
+  class="table table-hover text-center"
+>
+  <thead class="thead-light">
+    <th *ngFor="let column of columns">{{ column.displayName }}</th>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let object of data; let objectIndex = index"
+      (click)="onRowClickedEvent(object)"
+    >
+      <td
+        *ngFor="let key of object | keys; let keyIndex = index"
+        [ngClass]="{
+          'd-none': getItemByKeyName(objectIndex, keyIndex) === 'no-display-key'
+        }"
+      >
+        {{ getItemByKeyName(objectIndex, keyIndex) }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #noData>
+  <p class="text-center">No hay registros disponibles para mostrar</p>
+</ng-template>

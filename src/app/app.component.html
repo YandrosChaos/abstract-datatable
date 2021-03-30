@@ -1,0 +1,7 @@
+<app-datatable
+  [data]="personList"
+  [columns]="columns"
+  [button]="buttonText"
+  (buttonClickedEvent)="onAdd()"
+  (rowClickedEvent)="onRowClicked($event)"
+></app-datatable>
