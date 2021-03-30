@@ -12,16 +12,16 @@ export class AppComponent implements OnInit {
   public buttonText: string = 'Crear nueva alta';
   public columns = [
     {
+      name: 'job',
+      displayName: 'Trabajo',
+    },
+    {
       name: 'name',
-      description: 'Nombre',
+      displayName: 'Nombre',
     },
     {
       name: 'surname',
-      description: 'Apellido',
-    },
-    {
-      name: 'job',
-      description: 'Trabajo',
+      displayName: 'Apellido',
     },
   ];
 

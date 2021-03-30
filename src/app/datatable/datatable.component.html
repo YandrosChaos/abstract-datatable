@@ -7,15 +7,13 @@
   class="table table-hover text-center"
 >
   <thead class="thead-light">
-    <th class="no-bg"></th>
-    <th *ngFor="let column of columns">{{ column.description }}</th>
+    <th *ngFor="let column of columns">{{ column.displayName }}</th>
   </thead>
   <tbody>
     <tr
       *ngFor="let object of data; let objectIndex = index"
       (click)="onRowClickedEvent(object)"
     >
-      <th></th>
       <td
         *ngFor="let key of object | keys; let keyIndex = index"
         [ngClass]="{

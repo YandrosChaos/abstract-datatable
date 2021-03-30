@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 interface Column {
   name: string;
-  description: string;
+  displayName: string;
 }
 
 @Component({
