@@ -37,8 +37,7 @@ export class DatatableComponent implements OnInit {
     if (this.columns.find((x) => x.name === key)) {
       return currentObject[key] || '-';
     } else {
-      return;
+      return 'no-display-key';
     }
   }
-
 }

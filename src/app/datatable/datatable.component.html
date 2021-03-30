@@ -18,6 +18,9 @@
       <th></th>
       <td
         *ngFor="let key of object | keys; let keyIndex = index"
+        [ngClass]="{
+          'd-none': getItemByKeyName(objectIndex, keyIndex) === 'no-display-key'
+        }"
       >
         {{ getItemByKeyName(objectIndex, keyIndex) }}
       </td>
